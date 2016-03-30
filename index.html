@@ -1,40 +1,62 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>DigiLinkZ Character Tree</title>
-    <script  language="javascript" type="text/javascript"  src="js/jquery.min.js"></script>
-    <script  language="javascript" type="text/javascript"  src="js/graphics.js"></script>
-    <script  language="javascript" type="text/javascript"  src="js/arbor.js"></script>
-    <script  language="javascript" type="text/javascript"  src="js/renderer.js"></script>
-  </head>
-  <body>
-    <h1>Digimon LinkZ TopKek Tree</h1>
-    <p>
-        This is going to become the best thing ever ... 
-        <br>
-        Soon (TM)
-        <br>
-        
-        
-        <canvas id="viewport" width="800" height="600"></canvas>
-        <script language="javascript" type="text/javascript">
-        
-            var sys = arbor.ParticleSystem(1000, 400,1);
-            sys.parameters({gravity:false});
-            sys.renderer = Renderer("#viewport") ;
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>graphSub</title>
+    <title>Animating Changes in Force Diagram</title>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style>
+        .link {
+            stroke-width: 4px;
+        }
 
-            var data = {
-                nodes:{
-                    greymon:{'color':'red','shape':'dot','label':'Greymon'},
-                    agumon:{'color':'green','shape':'dot','label':'Agumon'},
-                    toyagumon:{'color':'green','shape':'dot','label':'ToyAgumon'},
-                    metalgreymon:{'color':'blue','shape':'dot','label':'MetalGreymon'}
-                },
-                edges:{
-                    greymon:{ agumon:{}, toyagumon:{}, metalgreymon:{} }
-                }
-            };
-            sys.graft(data);
-        </script>
-    </p>
-  </body>
+        .node {
+            stroke: #fff;
+            stroke-width: 2px;
+        }
+
+        .textClass {
+            stroke: #23232;
+            font-family: "Arial", "Liberation Sans", Arial, Helvetica, sans-serif;
+            font-weight: bold;
+
+            stroke-width: 3;
+            font-size: 20px;
+
+        }
+
+        #licensing {
+            fill: green;
+        }
+
+        .link.licensing {
+            stroke: green;
+        }
+
+        #chart, .ui-widget {
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+        }
+
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="ui-widget">
+  <label for="search">Search: </label>
+  <input id="search">
+</div>
+<div id="chart">    
+</div>
+</body>
+<script src="js/g2j4d3.js"></script>
+<script src="js/graphSub.js"></script>
 </html>
