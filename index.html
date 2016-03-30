@@ -1,15 +1,40 @@
 <html>
   <head>
     <title>DigiLinkZ Character Tree</title>
+    <script  language="javascript" type="text/javascript"  src="js/jquery.min.js"></script>
+    <script  language="javascript" type="text/javascript"  src="js/graphics.js"></script>
+    <script  language="javascript" type="text/javascript"  src="js/arbor.js"></script>
+    <script  language="javascript" type="text/javascript"  src="js/renderer.js"></script>
   </head>
   <body>
     <h1>Digimon LinkZ TopKek Tree</h1>
     <p>
-    This is going to become the best thing ever ... 
-    <br>
-    Soon (TM)
-    <br>
-      <img src="http://i.imgur.com/LPHOYOc.png" alt="nod nod"/>
+        This is going to become the best thing ever ... 
+        <br>
+        Soon (TM)
+        <br>
+        
+        
+        <canvas id="viewport" width="800" height="600"></canvas>
+        <script language="javascript" type="text/javascript">
+        
+            var sys = arbor.ParticleSystem(1000, 400,1);
+            sys.parameters({gravity:false});
+            sys.renderer = Renderer("#viewport") ;
+
+            var data = {
+                nodes:{
+                    greymon:{'color':'red','shape':'dot','label':'Greymon'},
+                    agumon:{'color':'green','shape':'dot','label':'Agumon'},
+                    toyagumon:{'color':'green','shape':'dot','label':'ToyAgumon'},
+                    metalgreymon:{'color':'blue','shape':'dot','label':'MetalGreymon'}
+                },
+                edges:{
+                    greymon:{ agumon:{}, toyagumon:{}, metalgreymon:{} }
+                }
+            };
+            sys.graft(data);
+        </script>
     </p>
   </body>
 </html>
